@@ -1,0 +1,35 @@
+library(foreign)
+>data1=
+names(datazz)
+read.csv2("C:/users/fatmamelike.mungan/desktop/data1.csv",header = FALSE)
+reg1=lm(Mortality~Total.Health.Expenditure, data = datazz)
+summary(reg1)
+
+****#str(datazz)
+reg1=lm(Total.Health.Expenditure~Mortality, data = datazz)
+summary(reg1)
+
+> install.packages("dynlm")
+> datazz_ts=ts(data5,start=1985,freq=1)
+> summary(reg1)$coef
+
+> library(car)
+> install.packages("car")
+> linearHypothesis(reg2, matchCoefs(reg2,"Total.Health.Expenditure"))
+
+
+> b=coef(reg2)
+>b[["Total.Health.Expenditure"]]+b[["L(Mortality)"]]
+
+> linearHypothesis(reg2, "Total.Health.Expenditure+L(Mortality)=0")
+
+reg2=lm(Total.Health.Expenditure~Population, data = datazz)
+summary(reg2)$coef
+
+reg3=lm(Total.Health.Expenditure~Life.Expectancy, data = datazz)
+summary(reg3)$coef
+
+reg4=lm(Total.Health.Expenditure~Years, data = datazz)
+coef(summary(reg4))
+
+with(datazz, summary(inflation.rate))
